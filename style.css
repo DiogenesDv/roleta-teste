@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.folha-background{
+    position: absolute;
+    border: 3px solid black;
+    box-shadow: 0 0 10px 3px #000;
+    background:  linear-gradient(to right, #ae2896, #509bf5);
+    width: 600px;
+    height: 600px;
+    padding: 50px;
+}
+.seta-roleta-sombra{
+    position: relative;
+    z-index: 5;
+    top: 0;
+    left: 46.5%;
+    box-shadow: 0 -5px 5px black;
+    border-bottom: 0px solid transparent;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 10px solid transparent;
+    width: 0;
+    height: 0;
+    animation: animacaoSeta .25s linear infinite;
+}
+.seta-roleta{
+    position: relative;
+    z-index: 5;
+    top: -9px;
+    left: 46.5%;
+    border-bottom: 0px solid transparent;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 40px solid #1aff00;
+    width: 0;
+    height: 0;
+    animation: animacaoSeta .25s linear infinite;    
+}
+
+.roleta-premios{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    border: 10px solid #fff;
+    width: 83%;
+    height: 83%;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 10px 3px #000;
+    /*animation: roleta 5s linear infinite;*/
+}
+
+path{
+    fill: transparent;
+}
+
+.box-premios-1,
+.box-premios-2,
+.box-premios-3,
+.box-premios-4,
+.box-premios-5,
+.box-premios-6,
+.box-premios-7,
+.box-premios-8{
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.box-premios-1{
+    border-top: 120px solid transparent;
+    border-right: 120px solid transparent;
+    border-bottom: 120px solid #f6685e;
+    border-left: 120px solid #f6685e;
+}
+.box-premios-5{
+    border-top: 120px solid #e91e63;
+    border-right: 120px solid #e91e63;
+    border-bottom: 120px solid transparent;
+    border-left: 120px solid transparent;
+}
+.box-premios-2{
+    border-top: 120px solid #9c27b0;
+    border-right: 120px solid transparent;
+    border-bottom: 120px solid transparent;
+    border-left: 120px solid #9c27b0;
+    left: 50%;
+}
+.box-premios-6{
+    border-top: 120px solid transparent;
+    border-right: 120px solid #673ab7;
+    border-bottom: 120px solid #673ab7;
+    border-left: 120px solid transparent;
+    left: 50%;
+}
+.box-premios-4{
+    border-top: 120px solid transparent;
+    border-right: 120px solid transparent;
+    border-bottom: 120px solid #2196f3;
+    border-left: 120px solid #2196f3;
+    top: 50%;
+    left: 50%;
+}
+.box-premios-8{
+    border-top: 120px solid #34399d;
+    border-right: 120px solid #34399d;
+    border-bottom: 120px solid transparent;
+    border-left: 120px solid transparent;
+    top: 50%;
+    left: 50%;
+}
+.box-premios-3 {
+    border-top: 120px solid #009688;
+    border-right: 120px solid transparent;
+    border-bottom: 120px solid transparent;
+    border-left: 120px solid #009688;
+    top: 50%;
+}
+
+.box-premios-7 {
+    border-top: 120px solid transparent;
+    border-right: 120px solid #ffeb3b;
+    border-bottom: 120px solid #ffeb3b;
+    border-left: 120px solid transparent;
+    top: 50%;
+}
+ @keyframes roleta{
+    0%{
+        transform: rotate(0deg)
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+ }
+
+ @keyframes animacaoSeta{
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(-15deg);}
+    75%{transform: rotate(15deg);}
+    100%{transform: rotate(0deg);}
+ }
+ 
+ .premio{
+    position: absolute;
+    z-index: 6;
+    font-size: 27px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0px 0px 5px 5px black;
+ }
+ .premio-1{
+    top: 33%;
+    left: 8%;
+    transform: rotate(20deg);
+    
+ }
+ .premio-2 {
+    top: 15%;
+    left: 30%;
+    transform: rotate(55deg);
+}
+.premio-3 {
+    top: 15%;
+    left: 55%;
+    transform: rotate(115deg);
+}
+.premio-4 {
+    top: 33%;
+    right: 10%;
+    transform: rotate(150deg);
+}
+
+.premio-5 {
+    top: 60%;
+    right: 10%;
+    transform: rotate(200deg);
+}
+
+.premio-6 {
+    top: 80%;
+    right: 30%;
+    transform: rotate(250deg);
+}
+
+.premio-7 {
+    top: 80%;
+    left: 30%;
+    transform: rotate(306deg);
+}
+
+.premio-8 {
+    top: 60%;
+    left: 10%;
+    transform: rotate(333deg);
+}
+
+.btnRoleta{
+    position: absolute;
+    color: #fff;
+    background-color: #000000;
+    border: 15px solid solid;
+    cursor: pointer;
+    top: 47.5%;
+    left: 47%;
+    font-size: 20px;
+    border-radius: 30%;
+    height: 25px;
+    width: 33px;
+    text-align: center;
+}
+.play{
+    z-index: 7;
+}
+.stop{
+    /*visibility: hidden;*/
+    animation-play-state: paused;
+}
+.msg-ganhador{
+    position: absolute;
+    top: 280px;
+    left: 200px;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    background-color: #000000;
+    width: 200px;
+    text-align: center;
+}
+
+
+
